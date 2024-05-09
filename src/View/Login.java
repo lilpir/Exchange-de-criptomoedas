@@ -4,6 +4,7 @@
  */
 package View;
 
+import Control.UsuarioControl;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -13,12 +14,14 @@ import javax.swing.JTextField;
  * @author iMac
  */
 public class Login extends javax.swing.JFrame {
-
+    
     
     public Login() {
         initComponents();
+        cl = new UsuarioControl(this);
     }
-
+    
+   
     public JButton getBtEntrar() {
         return btEntrar;
     }
@@ -174,6 +177,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldSenhaActionPerformed
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
+        cl.loginUsuario();
         PaginaInicial pi = new PaginaInicial();
         pi.setVisible(true);
     }//GEN-LAST:event_btEntrarActionPerformed
@@ -217,7 +221,7 @@ public class Login extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private UsuarioControl cl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEntrar;
     private javax.swing.JMenu jMenu1;
