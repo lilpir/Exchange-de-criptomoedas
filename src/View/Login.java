@@ -178,8 +178,6 @@ public class Login extends javax.swing.JFrame {
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
         cl.loginUsuario();
-        PaginaInicial pi = new PaginaInicial();
-        pi.setVisible(true);
     }//GEN-LAST:event_btEntrarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed

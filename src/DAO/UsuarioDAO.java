@@ -21,7 +21,7 @@ public class UsuarioDAO {
 //                    aluno.getSenha() + "'";
         // Corrigindo o problema da injeção de sql;
         
-        String sql = "select * from usuarios where usuario = ? and senha = ?";
+        String sql = "select * from usuario where usuario = ? and senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1,usuarios.getUsuario());
         statement.setString(2,usuarios.getSenha());
@@ -31,7 +31,7 @@ public class UsuarioDAO {
     }
     
     public void cadastar(Usuario usuarios) throws SQLException{
-        String sql = "insert into usuarios ( Usuario, Nome, CPF, Senha) values('"+
+        String sql = "insert into usuario ( Usuario, Nome, CPF, Senha) values('"+
                     usuarios.getUsuario() + "', '"+
                     usuarios.getNome() + "', '"+
                     usuarios.getCPF() + "', '"+
@@ -42,7 +42,7 @@ public class UsuarioDAO {
     }
     
     public void excluir(Usuario usuarios)throws SQLException{
-        String sql = "delete from usuarios where usuario = ?";
+        String sql = "delete from usuario where usuario = ?";
          PreparedStatement statement = conn.prepareStatement(sql);
          statement.setString(1,usuarios.getUsuario());
          statement.execute();
@@ -50,7 +50,7 @@ public class UsuarioDAO {
     }
     
     public void atualizar(Usuario usuarios)throws SQLException{
-        String sql = "update usuarios set senha = ? where usuario = ?";
+        String sql = "update usuario set senha = ? where usuario = ?";
          PreparedStatement statement = conn.prepareStatement(sql);
          statement.setString(1,usuarios.getSenha());
          statement.setString(2,usuarios.getUsuario());

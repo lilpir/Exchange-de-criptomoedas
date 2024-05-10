@@ -19,7 +19,7 @@ public class UsuarioControl {
     }
     
     public void loginUsuario(){
-        Usuario pessoa = new Usuario(null, view.getjTextFieldUsuario().getText(), null,view.getjTextFieldSenha().getText());
+        Usuario pessoa = new Usuario(null, view.getjTextFieldUsuario().getText(), view.getjTextFieldSenha().getText(), null);
         Conexaop2 conexao = new Conexaop2();
         try{
             Connection conn = conexao.getConnection();
@@ -27,10 +27,10 @@ public class UsuarioControl {
             ResultSet res = dao.login(pessoa);
             if(res.next()){
                 JOptionPane.showMessageDialog(view,"Login feito!");
-                String nome = res.getString("nome");
-                String usuario = res.getString("usuario");
-                String CPF = res.getString("CPF");
-                String senha = res.getString("senha");
+                String Nome = res.getString("nome");
+                String Usuario = res.getString("usuario");
+                String CPF = res.getString("cpf");
+                String Senha = res.getString("Senha");
                 PaginaInicial viewUsuario = new PaginaInicial();
                 viewUsuario.setVisible(true);
                 view.setVisible(false);
@@ -39,6 +39,7 @@ public class UsuarioControl {
             }
             
         }catch(SQLException e){
+            System.out.println(e);
             JOptionPane.showMessageDialog(view,"Erro de conexão");
         }
     }
