@@ -107,7 +107,7 @@ public class PaginaInicial extends javax.swing.JFrame {
         });
 
         btSair.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 18)); // NOI18N
-        btSair.setText("Atualizar senha");
+        btSair.setText("Sair");
         btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSairActionPerformed(evt);
@@ -143,7 +143,7 @@ public class PaginaInicial extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(20, 20, 20)))))
-                .addGap(111, 201, Short.MAX_VALUE))
+                .addGap(111, 178, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
