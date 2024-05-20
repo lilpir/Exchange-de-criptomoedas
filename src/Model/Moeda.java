@@ -2,23 +2,13 @@
 package Model;
 
 
-public abstract class Moeda implements Tarifa {
+public class Moeda{
 
-    private final String nome;
-    private final int qtemoeda;
-    private final double preco;
-    private final double taxamoeda;
-    public Moeda(String nome,int qtemoeda, double preco, double taxamoeda){
+    public final String nome;
+    public final double preco;
+    public Moeda(String nome, double preco){
         this.nome = nome;
-        this.qtemoeda = qtemoeda;
         this.preco = preco;
-        this.taxamoeda = taxamoeda;
     }
-
-    @Override
-    public abstract double compra();
-
-    @Override
-    public abstract double venda();
     
 }

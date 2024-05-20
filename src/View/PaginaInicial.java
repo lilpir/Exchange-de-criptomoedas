@@ -207,7 +207,11 @@ public class PaginaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btAtualizarSenhaActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
-        // TODO add your handling code here:
+        for(int i = 0; i < 10; i++){
+            if( i == 0){
+                break;
+            }
+        }
     }//GEN-LAST:event_btSairActionPerformed
 
 //    /**
@@ -245,6 +249,8 @@ public class PaginaInicial extends javax.swing.JFrame {
 //        });
 //    }
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAtualizarCotação;
     private javax.swing.JButton btAtualizarSenha;

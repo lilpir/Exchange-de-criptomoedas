@@ -4,6 +4,7 @@
  */
 package View;
 
+import Control.CadastroControl;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -16,6 +17,7 @@ public class Cadastro extends javax.swing.JFrame {
      */
     public Cadastro() {
         initComponents();
+        ctr = new CadastroControl(this);
     }
 
     public JTextField getjTextFieldCPFC() {
@@ -145,6 +147,11 @@ public class Cadastro extends javax.swing.JFrame {
 
         btCastrarC.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         btCastrarC.setText("CADASTRAR");
+        btCastrarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCastrarCActionPerformed(evt);
+            }
+        });
 
         jTextFieldCPFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,6 +235,10 @@ public class Cadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCPFCActionPerformed
 
+    private void btCastrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCastrarCActionPerformed
+         ctr.salvarAluno(); 
+    }//GEN-LAST:event_btCastrarCActionPerformed
+
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -267,6 +278,9 @@ public class Cadastro extends javax.swing.JFrame {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 //    }
 
+    
+    
+    private CadastroControl ctr;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCastrarC;
     private javax.swing.JTextField jTextFieldCPFC;

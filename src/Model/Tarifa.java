@@ -2,7 +2,7 @@
 package Model;
 
 public interface Tarifa {
-    public double venda();
-    public double compra();
+    public double venda( double valor);
+    public double compra(double valor);
     
 }
