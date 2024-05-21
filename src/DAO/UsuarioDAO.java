@@ -32,15 +32,15 @@ public class UsuarioDAO {
     }
     
     public void cadastar(Investidor usuarios) throws SQLException{
-        String sql = "insert into usuario ( Usuario, Nome, CPF, Senha,qtereal,qtebit,qteri,qtereet) values('"+
+        String sql = "insert into usuario ( Usuario, Nome, CPF, Senha,qtereal,qtebit,qteri,qteet) values('"+
                     usuarios.getUsuario() + "', '"+
                     usuarios.getNome() + "', '"+
                     usuarios.getCPF() + "', '"+
                     usuarios.getSenha() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(0).getPreco() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(1).getPreco() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(2).getPreco() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(3).getPreco() + "')";
+                    usuarios.getCarteira().getMoeda().get(0).getqte() + "', '"+
+                    usuarios.getCarteira().getMoeda().get(1).getqte() + "', '"+
+                    usuarios.getCarteira().getMoeda().get(2).getqte() + "', '"+
+                    usuarios.getCarteira().getMoeda().get(3).getqte() + "')";
         
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();

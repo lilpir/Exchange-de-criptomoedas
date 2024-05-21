@@ -5,10 +5,11 @@
 package View;
 
 import Control.PIcontrol;
+import Control.SaldoControl;
 import Model.Investidor;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-
+import View.Deposito;
 /**
  *
  * @author iMac
@@ -26,6 +27,72 @@ public class PaginaInicial extends javax.swing.JFrame {
         control = new PIcontrol(this);
         initComponents();
     }
+
+    public JButton getBtAtualizarCotação() {
+        return btAtualizarCotação;
+    }
+
+    public void setBtAtualizarCotação(JButton btAtualizarCotação) {
+        this.btAtualizarCotação = btAtualizarCotação;
+    }
+
+    public JButton getBtComprarCripto() {
+        return btComprarCripto;
+    }
+
+    public void setBtComprarCripto(JButton btComprarCripto) {
+        this.btComprarCripto = btComprarCripto;
+    }
+
+    public JButton getBtConsultarEx() {
+        return btConsultarEx;
+    }
+
+    public void setBtConsultarEx(JButton btConsultarEx) {
+        this.btConsultarEx = btConsultarEx;
+    }
+
+    public JButton getBtConsultarSaldo() {
+        return btConsultarSaldo;
+    }
+
+    public void setBtConsultarSaldo(JButton btConsultarSaldo) {
+        this.btConsultarSaldo = btConsultarSaldo;
+    }
+
+    public JButton getBtDepositar() {
+        return btDepositar;
+    }
+
+    public void setBtDepositar(JButton btDepositar) {
+        this.btDepositar = btDepositar;
+    }
+
+    public JButton getBtSacar() {
+        return btSacar;
+    }
+
+    public void setBtSacar(JButton btSacar) {
+        this.btSacar = btSacar;
+    }
+
+    public JButton getBtSair() {
+        return btSair;
+    }
+
+    public void setBtSair(JButton btSair) {
+        this.btSair = btSair;
+    }
+
+    public JButton getBtVenderCripto() {
+        return btVenderCripto;
+    }
+
+    public void setBtVenderCripto(JButton btVenderCripto) {
+        this.btVenderCripto = btVenderCripto;
+    }
+    
+    
 
    
     
@@ -172,7 +239,8 @@ public class PaginaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btConsultarSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarSaldoActionPerformed
-        // TODO add your handling code here:
+        Consulta cs = new Consulta(investidor,id);
+        cs.setVisible(true);
     }//GEN-LAST:event_btConsultarSaldoActionPerformed
 
     private void btConsultarExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarExActionPerformed
@@ -180,7 +248,8 @@ public class PaginaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btConsultarExActionPerformed
 
     private void btDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositarActionPerformed
-        // TODO add your handling code here:
+        Deposito dp = new Deposito(investidor,id);
+        dp.setVisible(true);
     }//GEN-LAST:event_btDepositarActionPerformed
 
     private void btSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSacarActionPerformed
@@ -243,6 +312,7 @@ public class PaginaInicial extends javax.swing.JFrame {
 //    }
 
     
+    private SaldoControl sc;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAtualizarCotação;

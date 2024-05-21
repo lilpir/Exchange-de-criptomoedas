@@ -46,14 +46,14 @@ public class UsuarioControl {
                 
                 int id = res.getInt("ID");
                 
-                carteira.adicionar(new Real("Real",qtd_real));
-                carteira.adicionar(new Bitcoin("Bitcoin",qtd_bit));
-                carteira.adicionar(new Ripple("Ripple",qtd_rip));
-                carteira.adicionar(new Ethereum("Ethereum",qtd_et));
+                carteira.adicionar(new Real("Real",qtd_real,1));
+                carteira.adicionar(new Bitcoin("Bitcoin",qtd_bit,355102.38));
+                carteira.adicionar(new Ripple("Ripple",qtd_rip,2.74));
+                carteira.adicionar(new Ethereum("Ethereum",qtd_et,18976.20));
                 
                 Investidor investidor = new Investidor(Nome,Usuario,CPF
                         ,Senha,carteira);
-               
+               JOptionPane.showMessageDialog(view, Senha);
                 PaginaInicial viewUsuario = new PaginaInicial(investidor, id);
                 viewUsuario.setVisible(true);
                 view.setVisible(false);
@@ -62,7 +62,6 @@ public class UsuarioControl {
             }
             
         }catch(SQLException e){
-            System.out.println(e);
             JOptionPane.showMessageDialog(view,"Erro de conexão");
         }
     }

@@ -36,10 +36,10 @@ public class CadastroControl {
         
         Carteira carteira = new Carteira();
         
-        carteira.adicionar(new Real("Real",0.0));
-        carteira.adicionar(new Bitcoin("Bitcoin",0.0));
-        carteira.adicionar(new Ripple("Ripple",0.0));
-        carteira.adicionar(new Ethereum("Ethereum",0.0));        
+        carteira.adicionar(new Real("Real",0.0,1));
+        carteira.adicionar(new Bitcoin("Bitcoin",0.0,355102.38));
+        carteira.adicionar(new Ripple("Ripple",0.0,2.74));
+        carteira.adicionar(new Ethereum("Ethereum",0.0,18976.20));        
         
         Investidor investidor = new Investidor(nome,usuario,cpf,senha,carteira);
         Conexaop2 conexao = new Conexaop2();
@@ -50,7 +50,9 @@ public class CadastroControl {
             JOptionPane.showMessageDialog(view,"Usuario Cadastrado");
             
             
+            
         }catch (SQLException e){
+            System.out.println(e);
             JOptionPane.showMessageDialog(view,"Usuario nao Cadastrado");
         }
     }

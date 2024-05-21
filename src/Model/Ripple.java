@@ -4,8 +4,8 @@ package Model;
 
 public class Ripple extends Moeda{
     
-    public Ripple(String nome, double preco) {
-        super(nome, preco);
+    public Ripple(String nome, double preco, double cot) {
+        super(nome, preco,cot);
     }
     
     @Override

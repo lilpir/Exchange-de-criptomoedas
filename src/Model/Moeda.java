@@ -5,27 +5,38 @@ package Model;
 public abstract class Moeda implements Tarifa{
 
     private String nome;
-    protected double preco;
-    public Moeda(String nome, double preco){
+    protected double qte;
+    protected double cot;
+    public Moeda(String nome, double qte, double cot){
         this.nome = nome;
-        this.preco = preco;
+        this.qte = qte;
+        this.cot = cot;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public double getPreco() {
-        return preco;
+    public double getqte() {
+        return qte;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setqte(double qte) {
+        this.qte = qte;
     }
+
+    public double getCot() {
+        return cot;
+    }
+
+    public void setCot(double cot) {
+        this.cot = cot;
+    }
+    
     
 
     @Override

@@ -7,8 +7,8 @@ package Model;
  */
 public class Real extends Moeda {
 
-    public Real(String nome, double preco) {
-        super(nome, preco);
+    public Real(String nome, double preco, double cot) {
+        super(nome, preco,cot);
     }
     
     

@@ -3,8 +3,8 @@ package Model;
 
 public class Investidor extends Usuario{
     private Carteira carteira;
-    public Investidor(String nome, String usuario, String senha, String CPF, Carteira carteira) {
-        super(nome,usuario,senha,CPF);
+    public Investidor(String nome, String usuario, String CPF, String senha, Carteira carteira) {
+        super(nome,usuario,CPF,senha);
         this.carteira = carteira;
     }
 

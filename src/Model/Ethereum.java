@@ -4,8 +4,8 @@ package Model;
 
 public class Ethereum  extends Moeda {
     
-    public Ethereum(String nome, double preco) {
-        super(nome, preco);
+    public Ethereum(String nome, double preco, double cot) {
+        super(nome, preco,cot);
     }
     
     
