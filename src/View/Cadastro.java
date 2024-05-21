@@ -236,7 +236,7 @@ public class Cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCPFCActionPerformed
 
     private void btCastrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCastrarCActionPerformed
-         ctr.salvarAluno(); 
+         ctr.salvarUser(); 
     }//GEN-LAST:event_btCastrarCActionPerformed
 
 //    /**

@@ -2,6 +2,12 @@
 package Control;
 import DAO.Conexaop2;
 import DAO.UsuarioDAO;
+import Model.Bitcoin;
+import Model.Carteira;
+import Model.Ethereum;
+import Model.Investidor;
+import Model.Real;
+import Model.Ripple;
 import Model.Usuario;
 import View.Login;
 import View.PaginaInicial;
@@ -31,7 +37,24 @@ public class UsuarioControl {
                 String Usuario = res.getString("usuario");
                 String CPF = res.getString("cpf");
                 String Senha = res.getString("Senha");
-                PaginaInicial viewUsuario = new PaginaInicial();
+                double qtd_real = res.getDouble("qtereal");
+                double qtd_bit = res.getDouble("qtebit");
+                double qtd_rip = res.getDouble("qteri");
+                double qtd_et = res.getDouble("qteet");
+                
+                Carteira carteira = new Carteira();
+                
+                int id = res.getInt("ID");
+                
+                carteira.adicionar(new Real("Real",qtd_real));
+                carteira.adicionar(new Bitcoin("Bitcoin",qtd_bit));
+                carteira.adicionar(new Ripple("Ripple",qtd_rip));
+                carteira.adicionar(new Ethereum("Ethereum",qtd_et));
+                
+                Investidor investidor = new Investidor(Nome,Usuario,CPF
+                        ,Senha,carteira);
+               
+                PaginaInicial viewUsuario = new PaginaInicial(investidor, id);
                 viewUsuario.setVisible(true);
                 view.setVisible(false);
             }else{

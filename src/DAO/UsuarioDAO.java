@@ -1,5 +1,6 @@
 
 package DAO;
+import Model.Investidor;
 import Model.Usuario;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -30,31 +31,21 @@ public class UsuarioDAO {
         return resultado;
     }
     
-    public void cadastar(Usuario usuarios) throws SQLException{
-        String sql = "insert into usuario ( Usuario, Nome, CPF, Senha) values('"+
+    public void cadastar(Investidor usuarios) throws SQLException{
+        String sql = "insert into usuario ( Usuario, Nome, CPF, Senha,qtereal,qtebit,qteri,qtereet) values('"+
                     usuarios.getUsuario() + "', '"+
                     usuarios.getNome() + "', '"+
                     usuarios.getCPF() + "', '"+
-                    usuarios.getSenha() + "')";
+                    usuarios.getSenha() + "', '"+
+                    usuarios.getCarteira().getMoeda().get(0).getPreco() + "', '"+
+                    usuarios.getCarteira().getMoeda().get(1).getPreco() + "', '"+
+                    usuarios.getCarteira().getMoeda().get(2).getPreco() + "', '"+
+                    usuarios.getCarteira().getMoeda().get(3).getPreco() + "')";
+        
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();
         conn.close();
     }
     
-    public void excluir(Usuario usuarios)throws SQLException{
-        String sql = "delete from usuario where usuario = ?";
-         PreparedStatement statement = conn.prepareStatement(sql);
-         statement.setString(1,usuarios.getUsuario());
-         statement.execute();
-         conn.close();
-    }
-    
-    public void atualizar(Usuario usuarios)throws SQLException{
-        String sql = "update usuario set senha = ? where usuario = ?";
-         PreparedStatement statement = conn.prepareStatement(sql);
-         statement.setString(1,usuarios.getSenha());
-         statement.setString(2,usuarios.getUsuario());
-         statement.execute();
-         conn.close();
-    }
+   
 }

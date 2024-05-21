@@ -4,6 +4,8 @@
  */
 package View;
 
+import Control.PIcontrol;
+import Model.Investidor;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -12,8 +14,16 @@ import javax.swing.JTextField;
  * @author iMac
  */
 public class PaginaInicial extends javax.swing.JFrame {
-
-    public PaginaInicial() {
+    
+    private Investidor investidor;
+    private int id;
+    private PIcontrol control;
+    
+    
+    public PaginaInicial(Investidor investidor, int ID) {
+        this.investidor = investidor;
+        this.id = ID;
+        control = new PIcontrol(this);
         initComponents();
     }
 
@@ -36,7 +46,6 @@ public class PaginaInicial extends javax.swing.JFrame {
         btComprarCripto = new javax.swing.JButton();
         btVenderCripto = new javax.swing.JButton();
         btAtualizarCotação = new javax.swing.JButton();
-        btAtualizarSenha = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
@@ -98,14 +107,6 @@ public class PaginaInicial extends javax.swing.JFrame {
             }
         });
 
-        btAtualizarSenha.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 18)); // NOI18N
-        btAtualizarSenha.setText("Atualizar senha");
-        btAtualizarSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizarSenhaActionPerformed(evt);
-            }
-        });
-
         btSair.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 1, 18)); // NOI18N
         btSair.setText("Sair");
         btSair.addActionListener(new java.awt.event.ActionListener() {
@@ -128,21 +129,19 @@ public class PaginaInicial extends javax.swing.JFrame {
                         .addGap(176, 176, 176)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btVenderCripto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btComprarCripto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btAtualizarSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btAtualizarCotação, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btAtualizarCotação, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btComprarCripto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btSacar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btDepositar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btSacar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btConsultarSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btConsultarEx, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                            .addComponent(btConsultarSaldo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)))))
+                                .addGap(20, 20, 20))
+                            .addComponent(btConsultarEx, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btDepositar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(111, 178, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -150,22 +149,20 @@ public class PaginaInicial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9)
-                .addGap(25, 25, 25)
+                .addGap(32, 32, 32)
                 .addComponent(btConsultarSaldo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btConsultarEx)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btDepositar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
                 .addComponent(btSacar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btComprarCripto)
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addComponent(btVenderCripto)
                 .addGap(18, 18, 18)
                 .addComponent(btAtualizarCotação)
-                .addGap(18, 18, 18)
-                .addComponent(btAtualizarSenha)
                 .addGap(18, 18, 18)
                 .addComponent(btSair)
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -201,10 +198,6 @@ public class PaginaInicial extends javax.swing.JFrame {
     private void btAtualizarCotaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarCotaçãoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btAtualizarCotaçãoActionPerformed
-
-    private void btAtualizarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btAtualizarSenhaActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         for(int i = 0; i < 10; i++){
@@ -253,7 +246,6 @@ public class PaginaInicial extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAtualizarCotação;
-    private javax.swing.JButton btAtualizarSenha;
     private javax.swing.JButton btComprarCripto;
     private javax.swing.JButton btConsultarEx;
     private javax.swing.JButton btConsultarSaldo;

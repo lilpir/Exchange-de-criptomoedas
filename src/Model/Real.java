@@ -1,22 +1,24 @@
 
 package Model;
 
+/**
+ *
+ * @author unifapierri
+ */
+public class Real extends Moeda {
 
-public class Ethereum  extends Moeda {
-    
-    public Ethereum(String nome, double preco) {
+    public Real(String nome, double preco) {
         super(nome, preco);
     }
     
     
     @Override
     public double compra( double preco){
-        return preco *1.01;
+        return preco;
     }
-    
     
     @Override
     public double venda( double preco){
-        return preco * 0.98 ;
+        return preco;
     }
 }

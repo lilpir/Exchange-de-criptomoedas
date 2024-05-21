@@ -2,7 +2,7 @@
 package Model;
 
 
-public class Bitcoin extends Moeda implements Tarifa{
+public class Bitcoin extends Moeda {
     
     public Bitcoin(String nome, double preco) {
         super(nome, preco);

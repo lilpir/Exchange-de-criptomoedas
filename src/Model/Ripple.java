@@ -2,7 +2,7 @@
 package Model;
 
 
-public class Ripple extends Moeda implements Tarifa{
+public class Ripple extends Moeda{
     
     public Ripple(String nome, double preco) {
         super(nome, preco);
