@@ -4,7 +4,9 @@
  */
 package Control;
 
+import Model.Investidor;
 import View.PaginaInicial;
+import View.Sacar;
 
 /**
  *
@@ -15,5 +17,10 @@ public class PIcontrol {
     
     public PIcontrol(PaginaInicial view){
         this.view = view;
+    }
+    
+    public void abre_saque(Investidor investidor, int id){
+       Sacar sc = new Sacar(investidor, id);
+       sc.setVisible(true);
     }
 }

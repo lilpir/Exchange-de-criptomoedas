@@ -32,20 +32,45 @@ public class UsuarioDAO {
     }
     
     public void cadastar(Investidor usuarios) throws SQLException{
-        String sql = "insert into usuario ( Usuario, Nome, CPF, Senha,qtereal,qtebit,qteri,qteet) values('"+
-                    usuarios.getUsuario() + "', '"+
-                    usuarios.getNome() + "', '"+
-                    usuarios.getCPF() + "', '"+
-                    usuarios.getSenha() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(0).getqte() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(1).getqte() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(2).getqte() + "', '"+
-                    usuarios.getCarteira().getMoeda().get(3).getqte() + "')";
-        
+        String sql = "insert into usuario ( Usuario, Nome, CPF, Senha,qtereal,qtebit,qteri,qteet) values(?,?,?,?,?,?,?,?)";
         PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, usuarios.getUsuario());
+        statement.setString(2,usuarios.getNome());
+        statement.setString(3,usuarios.getCPF());
+        statement.setString(4,usuarios.getSenha());
+        statement.setDouble(5, usuarios.getCarteira().getMoeda().get(0).getqte());
+        statement.setDouble(6, usuarios.getCarteira().getMoeda().get(1).getqte());
+        statement.setDouble(7, usuarios.getCarteira().getMoeda().get(2).getqte());
+        statement.setDouble(8, usuarios.getCarteira().getMoeda().get(3).getqte());
         statement.execute();
         conn.close();
     }
+    
+    public void att(Investidor usuarios, int id) throws SQLException{
+        String usuario = usuarios.getUsuario();
+        String nome = usuarios.getNome();
+        String cpf = usuarios.getCPF();
+        String senha = usuarios.getSenha();
+        double qtreal = usuarios.getCarteira().getMoeda().get(0).getqte();
+        double qtbit = usuarios.getCarteira().getMoeda().get(1).getqte();
+        double qtripp = usuarios.getCarteira().getMoeda().get(2).getqte();
+        double qteth = usuarios.getCarteira().getMoeda().get(3).getqte();
+        
+        String sql = "UPDATE usuario Set Usuario = ?, Nome = ?, CPF = ?, Senha = ?,"+
+                    "qtereal = ?, qtebit = ?, qteri = ?, qteet = ? WHERE id = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1,usuario);
+        statement.setString(2,nome);
+        statement.setString(3,cpf);
+        statement.setString(4,senha);
+        statement.setDouble(5,qtreal);
+        statement.setDouble(6,qtbit);
+        statement.setDouble(7,qtripp);
+        statement.setDouble(8,qteth);
+        statement.setInt(9,id);
+        statement.executeUpdate();
+    }
+    
     
    
 }

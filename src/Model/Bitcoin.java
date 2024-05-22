@@ -3,10 +3,12 @@ package Model;
 
 
 public class Bitcoin extends Moeda {
-    
-    public Bitcoin(String nome, double preco, double cot) {
-        super(nome, preco,cot);
+
+    public Bitcoin(String nome, double qte, double cot, double cotvenda) {
+        super(nome, qte, cot, cotvenda);
     }
+    
+    
     
     @Override
     public double compra( double preco){

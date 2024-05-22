@@ -44,16 +44,15 @@ public class UsuarioControl {
                 
                 Carteira carteira = new Carteira();
                 
-                int id = res.getInt("ID");
+                int id = res.getInt("id");
                 
-                carteira.adicionar(new Real("Real",qtd_real,1));
-                carteira.adicionar(new Bitcoin("Bitcoin",qtd_bit,355102.38));
-                carteira.adicionar(new Ripple("Ripple",qtd_rip,2.74));
-                carteira.adicionar(new Ethereum("Ethereum",qtd_et,18976.20));
+                carteira.adicionar(new Real("Real",0.0,1,1));
+                carteira.adicionar(new Bitcoin("Bitcoin",0.0,355102.38,0.0000028));
+                carteira.adicionar(new Ripple("Ripple",0.0,2.74,0.37));
+                carteira.adicionar(new Ethereum("Ethereum",0.0,18976.20,0.0052));    
                 
                 Investidor investidor = new Investidor(Nome,Usuario,CPF
                         ,Senha,carteira);
-               JOptionPane.showMessageDialog(view, Senha);
                 PaginaInicial viewUsuario = new PaginaInicial(investidor, id);
                 viewUsuario.setVisible(true);
                 view.setVisible(false);

@@ -4,6 +4,8 @@
  */
 package Control;
 
+import DAO.Conexaop2;
+import DAO.UsuarioDAO;
 import Model.Investidor;
 import View.Deposito;
 import Model.Carteira;
@@ -36,22 +38,28 @@ public class ControllerDeposito {
                 "\nRipple: "+ investidor.getCarteira().getMoeda().get(2).getqte()+
                 "\nEthereum: "+ investidor.getCarteira().getMoeda().get(3).getqte());
         
-        float pre = (float) investidor.getCarteira().getMoeda().get(0).getqte();
-        
+        double pre =  investidor.getCarteira().getMoeda().get(0).getqte();
+       JOptionPane.showMessageDialog(view, id);
        String dep = view.getjTextFieldQte().getText();
-       try{
-           float depFloat = Float.parseFloat(dep);
-           float total = depFloat + pre;
-           Moeda aux = investidor.getCarteira().getMoeda().get(0);
-           aux.setqte(total);
-           view.getjTextAreaDepois().setText("Nome: "+ investidor.getNome()+
+       Conexaop2 conexao = new Conexaop2();
+       double depFloat = Double.parseDouble(dep);
+       double total = depFloat + pre;
+
+        investidor.getCarteira().getMoeda().get(0).setqte(total);
+           
+        view.getjTextAreaDepois().setText("Nome: "+ investidor.getNome()+
                 "\nCPF: "+ investidor.getCPF()+
                 "\n\nReal: "+ investidor.getCarteira().getMoeda().get(0).getqte()+
                 "\nBitcoin: "+ investidor.getCarteira().getMoeda().get(1).getqte()+
                 "\nRipple: "+ investidor.getCarteira().getMoeda().get(2).getqte()+
                 "\nEthereum: "+ investidor.getCarteira().getMoeda().get(3).getqte());
+        try{
+            Connection conn = conexao.getConnection();
+            UsuarioDAO dao = new UsuarioDAO(conn);
            
-       } catch(NumberFormatException e){
+            dao.att(investidor,id);
+           
+       } catch(SQLException e){
            JOptionPane.showMessageDialog(view,"Digite um número!"); 
        }
         

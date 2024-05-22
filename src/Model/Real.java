@@ -7,9 +7,11 @@ package Model;
  */
 public class Real extends Moeda {
 
-    public Real(String nome, double preco, double cot) {
-        super(nome, preco,cot);
+    public Real(String nome, double qte, double cot, double cotvenda) {
+        super(nome, qte, cot, cotvenda);
     }
+
+  
     
     
     @Override

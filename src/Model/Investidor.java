@@ -19,6 +19,10 @@ public class Investidor extends Usuario{
     public Investidor(Carteira carteira) {
         this.carteira = carteira;
     }
+
+    
+
+    
     
     
 }

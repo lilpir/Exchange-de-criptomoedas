@@ -3,10 +3,12 @@ package Model;
 
 
 public class Ethereum  extends Moeda {
-    
-    public Ethereum(String nome, double preco, double cot) {
-        super(nome, preco,cot);
+
+    public Ethereum(String nome, double qte, double cot, double cotvenda) {
+        super(nome, qte, cot, cotvenda);
     }
+    
+    
     
     
     @Override

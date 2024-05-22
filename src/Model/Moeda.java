@@ -7,10 +7,12 @@ public abstract class Moeda implements Tarifa{
     private String nome;
     protected double qte;
     protected double cot;
-    public Moeda(String nome, double qte, double cot){
+    protected double cotvenda;
+    public Moeda(String nome, double qte, double cot,double cotvenda){
         this.nome = nome;
         this.qte = qte;
         this.cot = cot;
+        this.cotvenda = cotvenda;
     }
 
     public String getNome() {
@@ -36,6 +38,15 @@ public abstract class Moeda implements Tarifa{
     public void setCot(double cot) {
         this.cot = cot;
     }
+
+    public double getCotvenda() {
+        return cotvenda;
+    }
+
+    public void setCotvenda(double cotvenda) {
+        this.cotvenda = cotvenda;
+    }
+    
     
     
 
@@ -45,8 +56,14 @@ public abstract class Moeda implements Tarifa{
     @Override
     public abstract double venda(double valor);
 
-
+    @Override
+    public void setcotcompra (double cotacao){
+        this.cot = cotacao;
+    }
     
+    @Override
+    public void setcotvenda (double cotacao){
+        this.cotvenda = cotacao;}
     
     
 }
