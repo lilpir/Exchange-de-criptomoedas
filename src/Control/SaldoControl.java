@@ -1,19 +1,7 @@
 
 package Control;
 
-import DAO.Conexaop2;
-import DAO.UsuarioDAO;
-import Model.Bitcoin;
-import Model.Carteira;
-import Model.Ethereum;
 import Model.Investidor;
-import Model.Real;
-import Model.Ripple;
-import View.Consulta;
-import View.PaginaInicial;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import View.Consulta;
 
@@ -30,8 +18,9 @@ public class SaldoControl {
         String isenha = investidor.getCPF();
         JOptionPane.showMessageDialog(view, isenha);
         if(senha.equals(isenha)){
-            System.out.println("aqui");
-            view.getjTextArea1().setText("Real: "+ investidor.getCarteira().getMoeda().get(0).getqte()+
+            view.getjTextArea1().setText("Nome: "+ investidor.getNome()+
+                "\nCPF: "+ investidor.getCPF()+
+                "\n\nReal: "+ investidor.getCarteira().getMoeda().get(0).getqte()+
                 "\nBitcoin: "+ investidor.getCarteira().getMoeda().get(1).getqte()+
                 "\nRipple: "+ investidor.getCarteira().getMoeda().get(2).getqte()+
                 "\nEthereum: "+ investidor.getCarteira().getMoeda().get(3).getqte());

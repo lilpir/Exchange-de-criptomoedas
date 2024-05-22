@@ -253,7 +253,8 @@ public class PaginaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btDepositarActionPerformed
 
     private void btSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSacarActionPerformed
-        // TODO add your handling code here:
+        Sacar s = new Sacar(investidor,id);
+        s.setVisible(true);
     }//GEN-LAST:event_btSacarActionPerformed
 
     private void btComprarCriptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btComprarCriptoActionPerformed
@@ -312,7 +313,7 @@ public class PaginaInicial extends javax.swing.JFrame {
 //    }
 
     
-    private SaldoControl sc;
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAtualizarCotação;
