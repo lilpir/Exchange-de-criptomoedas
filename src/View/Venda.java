@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 
 import Control.VendaControl;
@@ -10,15 +7,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author unifapierri
- */
+
 public class Venda extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Venda
-     */
+
     private VendaControl control;
     private int id;
     private Investidor investidor;

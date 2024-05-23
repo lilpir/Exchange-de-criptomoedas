@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 
 import Control.ControllerSaque;
@@ -12,15 +9,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-/**
- *
- * @author unifapierri
- */
+
 public class Sacar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Sacar
-     */
+
     private ControllerSaque control;
     private int id;
     private Investidor investidor;

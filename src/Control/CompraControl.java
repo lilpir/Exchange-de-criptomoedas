@@ -1,4 +1,7 @@
-
+/**
+ * Classe responsável por controlar a funcionalidade de compra de moedas.
+ * Autor: Alexandre Domiciano Pierri
+ */
 package Control;
 
 import DAO.Conexaop2;
@@ -9,19 +12,27 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-
-
-
+/**
+ * Controla a funcionalidade de compra de moedas.
+ */
 public class CompraControl {
     private Compra view;
     
     double pagar = 0;
     
-    
+    /**
+     * Construtor da classe CompraControl.
+     * @param view A view de compra associada a este controlador.
+     */
     public CompraControl(Compra view) {
         this.view = view;
     }
     
+    /**
+     * Realiza uma compra de moedas.
+     * @param investidor O investidor que realiza a compra.
+     * @param id O identificador do investidor no banco de dados.
+     */
     public void Compra(Investidor investidor, int id){
         String op = view.getjTextFieldTipo().getText();
         String qte = view.getjTextFieldTipo1().getText();
@@ -83,19 +94,12 @@ public class CompraControl {
         
         Conexaop2 conexao = new Conexaop2();
         try{
+            // Conecta ao banco de dados
             Connection conn = conexao.getConnection();
+            // Cria um objeto DAO para manipular usuários no banco de dados
             UsuarioDAO dao = new UsuarioDAO(conn);
+            // Atualiza as informações do investidor no banco de dados
             dao.att(investidor,id);
-            if(op.equals("1")){
-                dao.adicionarExtrato(investidor, pagar*(-1), qte2, 0, 0, "Compra de cripto");
-            }
-            else if(op.equals("2")){
-                dao.adicionarExtrato(investidor, pagar*(-1), 0, qte2, 0, "Compra de cripto");
-            }
-            else if(op.equals("3")){
-                dao.adicionarExtrato(investidor, pagar*(-1), 0, 0, qte2, "Compra de cripto");
-            }
-           
         }catch(SQLException e){
            JOptionPane.showMessageDialog(view,"Saldo nao atualizado!"); 
         }
