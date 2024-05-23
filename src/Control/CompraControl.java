@@ -28,7 +28,6 @@ public class CompraControl {
             }
             else{
                 double pos2 = pagar -investidor.getCarteira().getMoeda().get(0).getqte();
-                JOptionPane.showMessageDialog(view,pagar);
                 JOptionPane.showMessageDialog(view,"Compra não realizada! Falta R$"+pos2);
             }
             

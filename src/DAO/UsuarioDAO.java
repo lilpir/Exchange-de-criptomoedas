@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 
 public class UsuarioDAO {
@@ -51,6 +52,8 @@ public class UsuarioDAO {
         String nome = usuarios.getNome();
         String cpf = usuarios.getCPF();
         String senha = usuarios.getSenha();
+        System.out.println(senha);
+        System.out.println(cpf);
         double qtreal = usuarios.getCarteira().getMoeda().get(0).getqte();
         double qtbit = usuarios.getCarteira().getMoeda().get(1).getqte();
         double qtripp = usuarios.getCarteira().getMoeda().get(2).getqte();
@@ -69,6 +72,9 @@ public class UsuarioDAO {
         statement.setDouble(8,qteth);
         statement.setInt(9,id);
         statement.executeUpdate();
+        System.out.println(senha);
+        System.out.println(cpf);
+        
     }
     
     

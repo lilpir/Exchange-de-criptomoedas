@@ -35,6 +35,8 @@ public class CadastroControl {
         String senha = view.getjTextFieldSenhaC().getText();
         
         
+        
+        
         Carteira carteira = new Carteira();
         
         carteira.adicionar(new Real("Real",0.0,1,1));
@@ -44,17 +46,23 @@ public class CadastroControl {
         
         Investidor investidor = new Investidor(nome,usuario,cpf,senha,carteira);
         Conexaop2 conexao = new Conexaop2();
-        try{
-            Connection conn = conexao.getConnection();
-            UsuarioDAO dao = new UsuarioDAO(conn);
-            dao.cadastar(investidor);
-            JOptionPane.showMessageDialog(view,"Usuario Cadastrado");
-            
-            
-            
-        }catch (SQLException e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(view,"Usuario nao Cadastrado");
+        if(nome.equals("") || usuario.equals("") || cpf.equals("") || senha.equals("")){
+                JOptionPane.showMessageDialog(view,"Usuario nao Cadastrado");
+            }
+        else{
+            try{
+                Connection conn = conexao.getConnection();
+                UsuarioDAO dao = new UsuarioDAO(conn);
+                dao.cadastar(investidor);
+                JOptionPane.showMessageDialog(view,"Usuario Cadastrado");
+
+
+
+
+            }catch (SQLException e){
+                System.out.println(e);
+                JOptionPane.showMessageDialog(view,"Usuario nao Cadastrado");
+            }   
         }
     }
 }
