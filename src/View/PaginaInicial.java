@@ -23,6 +23,7 @@ public class PaginaInicial extends javax.swing.JFrame {
     
     public PaginaInicial(Investidor investidor, int ID) {
         this.investidor = investidor;
+      
         this.id = ID;
         control = new PIcontrol(this);
         initComponents();
@@ -268,7 +269,7 @@ public class PaginaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_btAtualizarCotaçãoActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
-        
+        control.sair();
     }//GEN-LAST:event_btSairActionPerformed
 
     private void btSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSacarActionPerformed

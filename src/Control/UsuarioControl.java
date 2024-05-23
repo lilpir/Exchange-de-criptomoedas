@@ -36,7 +36,7 @@ public class UsuarioControl {
                 String Nome = res.getString("nome");
                 String Usuario = res.getString("usuario");
                 String CPF = res.getString("cpf");
-                String Senha = res.getString("Senha");
+                String Senha = res.getString("senha");
                 double qtd_real = res.getDouble("qtereal");
                 double qtd_bit = res.getDouble("qtebit");
                 double qtd_rip = res.getDouble("qteri");

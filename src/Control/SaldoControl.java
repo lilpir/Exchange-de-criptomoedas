@@ -19,14 +19,10 @@ public class SaldoControl {
     
     public void saldo(Investidor investidor, int id) throws SQLException{
         String senha = view.getTxtsenha().getText();
-        String isenha = investidor.getCPF();
+        String isenha = investidor.getSenha();
         if(senha.equals(isenha)){
-           Conexaop2 conexao = new Conexaop2();
-           Connection conn = conexao.getConnection();
-           UsuarioDAO dao = new UsuarioDAO(conn);
-           dao.att(investidor,id);
             view.getjTextArea1().setText("Nome: "+ investidor.getNome()+
-                "\nCPF: "+ investidor.getSenha()+
+                "\nCPF: "+ investidor.getCPF()+
                 "\n\nReal: "+ investidor.getCarteira().getMoeda().get(0).getqte()+
                 "\nBitcoin: "+ investidor.getCarteira().getMoeda().get(1).getqte()+
                 "\nRipple: "+ investidor.getCarteira().getMoeda().get(2).getqte()+

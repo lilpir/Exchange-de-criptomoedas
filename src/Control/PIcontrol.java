@@ -5,6 +5,7 @@
 package Control;
 
 import Model.Investidor;
+import View.Login;
 import View.PaginaInicial;
 import View.Sacar;
 
@@ -22,5 +23,11 @@ public class PIcontrol {
     public void abre_saque(Investidor investidor, int id){
        Sacar sc = new Sacar(investidor, id);
        sc.setVisible(true);
+    }
+    
+    public void sair(){
+        view.setVisible(false);
+        Login login = new Login();
+        login.setVisible(true);
     }
 }

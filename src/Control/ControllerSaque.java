@@ -60,6 +60,7 @@ public class ControllerSaque {
                JOptionPane.showMessageDialog(view, dep + "R$ excede a quantia de dinehiro que você possui");
                JOptionPane.showMessageDialog(view, "Saque não concluido");
                dao.att(investidor,id);
+               dao.adicionarExtrato(investidor, total, 0, 0, 0, "Saque");
                view.getjTextAreaDepois().setText("Nome: "+ investidor.getNome()+
                 "\nCPF: "+ investidor.getCPF()+
                 "\n\nReal: "+ investidor.getCarteira().getMoeda().get(0).getqte()+

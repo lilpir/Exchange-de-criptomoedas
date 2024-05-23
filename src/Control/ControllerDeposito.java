@@ -57,6 +57,7 @@ public class ControllerDeposito {
             UsuarioDAO dao = new UsuarioDAO(conn);
            
             dao.att(investidor,id);
+            dao.adicionarExtrato(investidor, total, 0, 0, 0, "Deposito");
            
        } catch(SQLException e){
            JOptionPane.showMessageDialog(view,"Digite um número!"); 
