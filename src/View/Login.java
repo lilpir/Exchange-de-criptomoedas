@@ -5,6 +5,7 @@
 package View;
 
 import Control.UsuarioControl;
+import Model.Investidor;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;

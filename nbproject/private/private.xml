@@ -3,22 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Bitcoin.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Real.java</file>
+            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Control/ControllerDeposito.java</file>
             <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/View/PaginaInicial.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/View/Login.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Control/CadastroControl.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Moeda.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Investidor.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Control/PIcontrol.java</file>
+            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Control/ControllerSaque.java</file>
+            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/View/Sacar.java</file>
             <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Control/UsuarioControl.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Tarifa.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/DAO/UsuarioDAO.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/View/Consulta.java</file>
+            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/View/Deposito.java</file>
             <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Control/SaldoControl.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Ripple.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Ethereum.java</file>
-            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/Model/Carteira.java</file>
+            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/View/Consulta.java</file>
+            <file>file:/C:/Users/unifapierri/Documents/Exchange-de-criptomoedas/src/View/Login.java</file>
         </group>
     </open-files>
 </project-private>

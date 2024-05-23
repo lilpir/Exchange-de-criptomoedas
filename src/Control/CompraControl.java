@@ -26,7 +26,8 @@ public class CompraControl {
                 JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
             }
             else{
-                JOptionPane.showMessageDialog(view,"Compra não realizada! Falta dinheiro");
+                double pos2 = pagar -investidor.getCarteira().getMoeda().get(0).getqte();
+                JOptionPane.showMessageDialog(view,"Compra não realizada! Falta R$"+pos2);
             }
             
         }
@@ -36,11 +37,13 @@ public class CompraControl {
             double pos = investidor.getCarteira().getMoeda().get(0).getqte() - pagar;
             if(pos >=0){
                 investidor.getCarteira().getMoeda().get(0).setqte(pos);
+                investidor.getCarteira().getMoeda().get(2).setqte(qte2);
                 JOptionPane.showMessageDialog(view,"Compra realizada com sucesso");
                 JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
             }
             else{
-                JOptionPane.showMessageDialog(view,"Compra não realizada! Falta dinheiro");
+                double pos2 = pagar -investidor.getCarteira().getMoeda().get(0).getqte();
+                JOptionPane.showMessageDialog(view,"Compra não realizada! Falta R$"+pos2);
             }
             
         }
@@ -50,16 +53,18 @@ public class CompraControl {
             double pos = investidor.getCarteira().getMoeda().get(0).getqte() - pagar;
             if(pos >=0){
                 investidor.getCarteira().getMoeda().get(0).setqte(pos);
+                investidor.getCarteira().getMoeda().get(3).setqte(qte2);
                 JOptionPane.showMessageDialog(view,"Compra realizada com sucesso");
                 JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
             }
             else{
-                JOptionPane.showMessageDialog(view,"Compra não realizada! Falta dinheiro");
+                double pos2 = pagar -investidor.getCarteira().getMoeda().get(0).getqte();
+                JOptionPane.showMessageDialog(view,"Compra não realizada! Falta R$"+pos2);
             }
             
         }
         else{
-            JOptionPane.showMessageDialog(view,"Compra não realizada! Falta dinheiro");
+            JOptionPane.showMessageDialog(view,"Digite 1,2 ou 3!");
         }
     }
 }

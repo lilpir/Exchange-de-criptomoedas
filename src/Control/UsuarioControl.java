@@ -51,8 +51,7 @@ public class UsuarioControl {
                 carteira.adicionar(new Ripple("Ripple",0.0,2.74,0.37));
                 carteira.adicionar(new Ethereum("Ethereum",0.0,18976.20,0.0052));    
                 
-                Investidor investidor = new Investidor(Nome,Usuario,CPF
-                        ,Senha,carteira);
+                Investidor investidor = new Investidor(Nome,Usuario,CPF,Senha,carteira);
                 PaginaInicial viewUsuario = new PaginaInicial(investidor, id);
                 viewUsuario.setVisible(true);
                 view.setVisible(false);
