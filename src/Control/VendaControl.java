@@ -19,38 +19,53 @@ public class VendaControl {
         String op = view.getjTextFieldTipo().getText();
         String qte = view.getjTextFieldTipo1().getText();
         double qte2 = Double.parseDouble(qte);
-        if(op.equals("1") && investidor.getCarteira().getMoeda().get(1).getqte() > qte2){
-            double recebe = 0.97* qte2 *investidor.getCarteira().getMoeda().get(1).getCotvenda();
-            double pos = investidor.getCarteira().getMoeda().get(0).getqte() + recebe;
-            investidor.getCarteira().getMoeda().get(0).setqte(pos);
-            double moedapos = investidor.getCarteira().getMoeda().get(1).getqte() - qte2;
-            investidor.getCarteira().getMoeda().get(1).setqte(moedapos);
-            JOptionPane.showMessageDialog(view,"Compra realizada com sucesso");
-            JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
+        if(op.equals("1")){
+            if(investidor.getCarteira().getMoeda().get(1).getqte() >= qte2 && qte2>0){
+                double recebe = 0.97* qte2 *investidor.getCarteira().getMoeda().get(1).getCotvenda();
+                double pos = investidor.getCarteira().getMoeda().get(0).getqte() + recebe;
+                investidor.getCarteira().getMoeda().get(0).setqte(pos);
+                double moedapos = investidor.getCarteira().getMoeda().get(1).getqte() - qte2;
+                investidor.getCarteira().getMoeda().get(1).setqte(moedapos);
+                JOptionPane.showMessageDialog(view,moedapos);
+                JOptionPane.showMessageDialog(view,"Venda realizada com sucesso");
+                JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
+            }
+            else{
+                JOptionPane.showMessageDialog(view,"Quantidade digitada maior que a quantidade possuida!");
+            }
             
         }
-        else if(op.equals("2") &&investidor.getCarteira().getMoeda().get(2).getqte() > qte2){
-            double recebe = 0.99 * qte2 *investidor.getCarteira().getMoeda().get(2).getCotvenda();
-            double pos = investidor.getCarteira().getMoeda().get(0).getqte() + recebe;
-            investidor.getCarteira().getMoeda().get(0).setqte(pos);
-            double moedapos = investidor.getCarteira().getMoeda().get(2).getqte() - qte2;
-            investidor.getCarteira().getMoeda().get(2).setqte(moedapos);
-            JOptionPane.showMessageDialog(view,"Compra realizada com sucesso");
-            JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
+        else if(op.equals("2")){
+            if(investidor.getCarteira().getMoeda().get(2).getqte() >= qte2 && qte2>0){
+                double recebe = 0.99 * qte2 *investidor.getCarteira().getMoeda().get(2).getCotvenda();
+                double pos = investidor.getCarteira().getMoeda().get(0).getqte() + recebe;
+                investidor.getCarteira().getMoeda().get(0).setqte(pos);
+                double moedapos = investidor.getCarteira().getMoeda().get(2).getqte() - qte2;
+                investidor.getCarteira().getMoeda().get(2).setqte(moedapos);
+                JOptionPane.showMessageDialog(view,"Venda realizada com sucesso");
+                JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
+            }
+            else{
+                JOptionPane.showMessageDialog(view,"Quantidade digitada maior que a quantidade possuida!");
+            }
             
         }
-        else if(op.equals("3") &&investidor.getCarteira().getMoeda().get(3).getqte() > qte2){
-            double recebe = 0.98 * qte2 *investidor.getCarteira().getMoeda().get(3).getCotvenda();
-            double pos = investidor.getCarteira().getMoeda().get(0).getqte() + recebe;
-            investidor.getCarteira().getMoeda().get(0).setqte(pos);
-            double moedapos = investidor.getCarteira().getMoeda().get(3).getqte() - qte2;
-            investidor.getCarteira().getMoeda().get(3).setqte(moedapos);
-            JOptionPane.showMessageDialog(view,"Compra realizada com sucesso");
-            JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
-            
+        else if(op.equals("3")){
+            if(investidor.getCarteira().getMoeda().get(3).getqte() >= qte2 && qte2>0){
+                double recebe = 0.98 * qte2 *investidor.getCarteira().getMoeda().get(3).getCotvenda();
+                double pos = investidor.getCarteira().getMoeda().get(0).getqte() + recebe;
+                investidor.getCarteira().getMoeda().get(0).setqte(pos);
+                double moedapos = investidor.getCarteira().getMoeda().get(3).getqte() - qte2;
+                investidor.getCarteira().getMoeda().get(3).setqte(moedapos);
+                JOptionPane.showMessageDialog(view,"Venda realizada com sucesso");
+                JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
+            }
+            else{
+                JOptionPane.showMessageDialog(view,"Quantidade digitada maior que a quantidade possuida!");
+            }
         }
         else{
-            JOptionPane.showMessageDialog(view,"Venda não realizada! Quantidade digitada maior do que a possuida");
+            JOptionPane.showMessageDialog(view,"Digite 1 ou 2 ou 3");
         }
     }
 }

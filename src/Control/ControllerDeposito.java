@@ -38,8 +38,7 @@ public class ControllerDeposito {
                 "\nRipple: "+ investidor.getCarteira().getMoeda().get(2).getqte()+
                 "\nEthereum: "+ investidor.getCarteira().getMoeda().get(3).getqte());
         
-        double pre =  investidor.getCarteira().getMoeda().get(0).getqte();
-       JOptionPane.showMessageDialog(view, id);
+       double pre =  investidor.getCarteira().getMoeda().get(0).getqte();       
        String dep = view.getjTextFieldQte().getText();
        Conexaop2 conexao = new Conexaop2();
        double depFloat = Double.parseDouble(dep);

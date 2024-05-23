@@ -22,11 +22,13 @@ public class CompraControl {
             double pos = investidor.getCarteira().getMoeda().get(0).getqte() - pagar;
             if(pos >=0){
                 investidor.getCarteira().getMoeda().get(0).setqte(pos);
+                investidor.getCarteira().getMoeda().get(1).setqte(qte2);
                 JOptionPane.showMessageDialog(view,"Compra realizada com sucesso");
                 JOptionPane.showMessageDialog(view,"Saldo atual: "+ pos);
             }
             else{
                 double pos2 = pagar -investidor.getCarteira().getMoeda().get(0).getqte();
+                JOptionPane.showMessageDialog(view,pagar);
                 JOptionPane.showMessageDialog(view,"Compra não realizada! Falta R$"+pos2);
             }
             
